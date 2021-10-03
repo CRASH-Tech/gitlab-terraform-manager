@@ -25,7 +25,7 @@ export GITLAB_PROJECT_PATH="infra/terraform"
 
 **Save state file, filename will be generated automatically with timestamp. DO NOT rename it!**
 
-```./gitlab-terraform-manager save example_tf_state```
+```./gitlab-terraform-manager save example_tf_state data/```
 
 **Save sll state files to folder**
 

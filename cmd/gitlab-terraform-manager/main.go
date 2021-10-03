@@ -67,14 +67,15 @@ func GetStatesList(gitlab *GitlabImpl) {
 }
 
 func SaveState(gitlab *GitlabImpl) {
-	if len(os.Args) < 3 {
+	if len(os.Args) < 4 {
 		panic("You must set statefile name")
 	}
 
 	state_name := os.Args[2]
+	output_dir := os.Args[3]
 	state_data := gitlab.GetState(state_name)
 
-	WriteFile(state_data, fmt.Sprintf("%s.%d.json", state_name, time.Now().Unix()))
+	WriteFile(state_data, fmt.Sprintf("%s/%s.%d.json", output_dir, state_name, time.Now().Unix()))
 }
 
 func SaveAllStates(gitlab *GitlabImpl) {
